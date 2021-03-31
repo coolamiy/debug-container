@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "amitk8s-4dae"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "amitk8s-4dae"
+  template:
+    metadata:
+      labels:
+        app: "amitk8s-4dae"
+    spec:
+      containers:
+        - name: "amitk8s-4dae"
+          image: "amitcr.azurecr.io/amitk8s"
+          ports:
+          - containerPort: 80
